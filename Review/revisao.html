@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão - Matéria da prova</title>
+    <script src="./script1.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Revisão de todos os conteúdos:</h1>
+            <p><strong>Conteúdos para revisão do conteúdo da prova de Programação Cliente Web!</strong></p>
+        </header>
+        <div class="container">
+            <div class="tipos">
+                <h3>Tipos primitivos:</h3>
+                <ul>
+                    <li><strong>String: </strong>Tipo primitivo para textos.</li>
+                    <li><strong>Number: </strong>Tipo primitivo para números.</li>
+                    <li><strong>Boolean: </strong>Tipo primitivo para os valores: <em>True ou False</em>.</li>
+                    <li><strong>Undefined: </strong>Tipo primitivo para indicar dados(variáveis etc) não definidos.</li>
+                    <li><strong>Null: </strong>Tipo primitivo para dados(variáveis) vazias.</li>
+                    <li><strong>Symbol: </strong>Tipo primitivo para símbolos.</li>
+                </ul>
+                <h3>Outros tipos:</h3>
+                <ul>
+                    <li><strong>Object: </strong>Tipo para objetos.</li>
+                    <li><strong>Array: </strong>Tipo para array.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tipoString">
+                <h3>Cadeia de caracteres:</h3>
+                <ul>
+                    <li>Para definir um tipo de dado do tipo string podemos usar: <strong><code>" "=> aspas duplas; ' ' => aspas simples</code></strong>.</li>
+                    <li>Também pode-se utilizar <strong><code>` ` => crase para template strings</code></strong>.</li>
+                    <li>
+                        <strong>Propriedades e Métodos das strings:</strong>
+                        <ul>
+                            <li class="ul_li-li"><strong>Tamanho de uma string: </strong> <code>.lenght</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>minhaString = "ABCDEF"</b>;<br>
+                                        <em>let </em><b>tamanho = </b> <em>minhaString.lenght</em>;
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="ul_li-li"><strong>Extrai uma parte de uma string e colocar em uma nova string: </strong> <code>.slice(start, end)</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>str = "Apple, Banana, Kiwi"</b>;<br>
+                                        <em>let </em><b>part = </b> <em>str.slice(-12, -6)</em>; // part = 'Banana'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="ul_li-li"><strong>Extrai uma parte de uma string, similar ao método anterior, não aceita índices negativos: </strong> <code>.substring(start, end)</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>str = "Apple, Banana, Kiwi"</b>;<br>
+                                        <em>let </em><b>part = </b> <em>str.substring(7, 13)</em>; // part = 'Banana'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ul_li-li"><strong>Extrai uma parte de uma string, similar ao método .<code>.slice()</code>, segundo parâmetro é o tamanho da nova string: </strong> <code>.substr(start, lenght)</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>str = "Apple, Banana, Kiwi"</b>;<br>
+                                        <em>let </em><b>part = </b> <em>str.sub(7, 6)</em>; // part = 'Banana'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="ul_li-li"><strong>Substituir o valor de uma string: </strong> <code>.replace("palavra", "outraPalavra")</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>text = "Please visit Microsoft!"</b>;<br>
+                                        <em>let </em><b>newText = </b> <em>text.replace("Microsoft", "W3Schools")</em>; // newText = 'Please visit W3Schools!'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ul_li-li"><strong>Converter toda a string para letras maiúsculas: </strong> <code>.toUpperCase()</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>t1 = "Hello, World!"</b>;<br>
+                                        <em>let </em><b>t2 = </b> <em>t1.toUpperCase()</em>; // t2 = 'HELLO, WORLD!'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ul_li-li"><strong>Converter toda a string para letras minúsculas: </strong> <code>.toLowerCase()</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>t1 = "Hello, World!"</b>;<br>
+                                        <em>let </em><b>t2 = </b> <em>t1.toLowerCase()</em>; // t2 = 'hello, world!'
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ul_li-li"><strong>Retornar um caractere de uma posição da string: </strong> <code>.charAt(posicao)</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>t1 = "HELLOWORLD"</b>;<br>
+                                        <em>let </em><b>char = </b> <em>t1.charAt(0)</em>; // char = H
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="ul_li-li"><strong>Retornar o código ASCII de uma posição da string: </strong> <code>.charCodeAt(posicao)</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>t1 = "HELLOWORLD"</b>;<br>
+                                        <em>let </em><b>char = </b> <em>t1.charCodeAt(0)</em>; // char = 72
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ul_li-li"><strong>Retornar o caractere de uma posição da string: </strong> <code>propertyaccess[]</code><br><strong>Ex:</strong>
+                                <ul>
+                                    <li>
+                                        <code><em>let</em> <b>t1 = "HELLOWORLD"</b>;<br>
+                                        <em>let </em><b>char = </b> <em>t1[0]</em>; // char = H
+                                        </code>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
