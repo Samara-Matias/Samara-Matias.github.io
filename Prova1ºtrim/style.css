@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Fira Code';
+    src: url(../Review/fonte/FiraCode-Regular.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Fira Code';
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color:beige;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+fieldset{
+    margin-top: 50px;
+    width: 70%;
+}

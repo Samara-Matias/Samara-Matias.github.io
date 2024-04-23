@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1º trimestre - Ano Passado</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Prova 1º trimeste => Questão 8</h1>
+    <fieldset id="pizza">
+        <legend>Calculadora de Pizzas</legend>
+        <label>Tamanho(Sabor):</label>
+        <select id="tipo">
+            <option value="1">Napolitana</option>
+            <option value="2">Tonda Romana</option>
+        </select>
+        <label>Número de pizzas:</label>
+        <input type="number" id="num_pizzas">
+        <label>Tamanho(g):</label>
+        <input type="number" id="tam_pizza">
+        <button id="calcula">Calcular</button>
+    </fieldset>
+
+    <p id="resp"><!--  Resposta do calculo --> </p>
+
+    <script>
+        const getVal = seletor =>{
+            const elem = document.querySelector(seletor);
+            return parseFloat(elem.value) || 0;
+        }
+        const calcular = () =>{
+            // recupere os valores digitados
+            const tipoPizza = getVal("#tipo");
+            const numPizzas = getVal("#num_pizzas");
+            const tamPizza = getVal("#tam_pizza");
+
+            // calcule as quantidades de ingredientes
+            const totalMassa = numPizzas * tamPizza;
+            const qtdFarinha = Math.ceil(totalMassa * ((tipoPizza == 1) ? 0.5945 : 0.5934)) 
+            // OS VALORES PERCENTUAIS DEVEM SER CALCULADOS EM FUNÇÃO DA QUANTIDADE DE FARINHA
+            let qtdAgua = 0;
+            let qtdSal = 0;
+            let qtdOleo = 0;
+            if(tipoPizza == 1){
+                qtdAgua = Math.round((65/100) * qtdFarinha);
+                qtdSal = Math.round((3/100) * qtdFarinha);
+            }
+            else{
+                qtdAgua = Math.ceil(((60/100) * qtdFarinha));
+                qtdSal = Math.ceil((2.5/100) * qtdFarinha);
+                qtdOleo = Math.ceil((6/100) * qtdFarinha);
+            }
+
+            // gere a resposta (resp)
+            const resp = `Adicione ${qtdAgua}g de água, ${qtdSal}g e ${qtdOleo} de óleo`;
+            document.querySelector("#resp").innerHTML = resp;
+        }
+        document.querySelector("#calcula").onclick = calcular;
+    </script>
+</body>
+</html>

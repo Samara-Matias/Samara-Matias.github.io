@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1º Trimestre</title>
+</head>
+<body>
+    <h1>Prova de JS do 1º Trimestre de 2023</h1>
+    <p>
+        Massa Napolitana usa 65% dde água, 3% de sal e não usa óleo
+    </p>
+    <p>
+        Massa Tonda Romana usa 60% de água, 2,5% de sal e 6% de óleo
+    </p>
+    <fieldset id="pizza">
+        <legend>Calculadora de Pizza</legend>
+        <label>Tamanho:</label>
+        <select id="tipo">
+            <option value="1">Napolitana</option>
+            <option value="2">Tonda Romana</option>
+        </select>
+        <label>Número de Pizzas</label>
+        <input type="number" id="num_pizzas">
+        <label>Tamanho (g)</label>
+        <input type="number" id="tam_pizza">
+        <button id="calcula">Calcular</button>
+    </fieldset>
+    <p id="resp"></p>
+    <script>
+        //QUESTÃO 8
+        const getVal = seletor => {
+            const elem = document.querySelector(seletor);
+            return parseFloat(elem.value) || 0;
+        }
+        const calcular = () => {
+            //recupere os valores digitados
+            const tipoPizza = getVal("#tipo");//Recupera o valor do tipo da(s) pizza(s)
+            const numPizza = getVal("#num_pizzas");//Recupera o valor do número de pizzas
+            const tamPizza = getVal("#tam_pizza");//Recupera o valor do tamanho da(s) pizza(s)
+            
+            //calcule o peso total da massa
+            let totalMassa = numPizza * tamPizza;
+            
+            //calcule as quantidades de ingredientes
+            const qtdFarinha = Math.ceil(totalMassa * ((tipoPizza == 1) ? 0.5945 : 0.5934));
+            let qtdAgua;
+            let qtdOleo;
+            let qtdSal;
+            if(tipoPizza == 1)
+            {
+                qtdAgua = Math.ceil((qtdFarinha/100)*65);
+                qtdSal = Math.ceil((qtdFarinha/100)*3);
+                qtdOleo = 0;
+            }
+            if(tipoPizza == 2)
+            {
+                qtdAgua = Math.ceil((qtdFarinha/100)*60);
+                qtdSal = Math.ceil((qtdFarinha/100)*2.5);
+                qtdOleo = Math.ceil((qtdFarinha/100)*6);
+            }
+            //gere a resposta (resp)
+            let resp = document.querySelector("#resp");
+            resp = `Adicione ${qtdAgua}g de água, ${qtdSal}g de sal e ${qtdOleo}g de óleo`;
+            document.querySelector("#resp").innerHTML = resp;
+        }
+        document.querySelector("#calcula").onclick = calcular;
+
+        //QUESTÃO 5
+        const soma = (a, b, r) => {
+            r = a + b;
+            console.log(r, " / ");
+        }
+        y = 0;
+        soma (7, 8, y);
+        console.log(y);
+
+        //QUESTÃO 7
+        const functionB = () => {
+            console.log(x);
+        }
+        const functionA = () => {
+            let x = 7;
+            functionB();
+        }
+        let x = 4;
+        functionA();
+
+        //QUESTÃO 6
+        let h = 11;
+        let j = "234";
+        let d = h + "";
+        let e = j + 10;
+        let f = j - 10;
+        console.log(d);
+        console.log(e);
+        console.log(f);
+    </script>
+</body>
+</html>
