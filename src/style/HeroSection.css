@@ -7,7 +7,7 @@
 
 .hero_section_content{
     background-color: var(--hero-sec-div-color);
-    padding: 10px;
+    padding: 20px;
     min-height: calc(100vh - 4vw);
     border-radius: 15px;
     display: grid;
@@ -53,17 +53,13 @@
         padding: 0;
     }
     .hero_section_content{
-        width: 100vw;
-        min-height: 100vh;
-        border: none;
+        width: 100dvw;
+        height: 90dvh;
+        border-radius: 0;
         margin: 0;
+        padding: 15px 0px;
     }
     .hero_section_content h1{
         font-size: 30vw;
     }
 }
-
-@media (min-width: 1024px) { }
-
-
-@media (min-width: 1280px) { }
