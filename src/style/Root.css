@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'SUSE Regular';
+    src: url('../assets/fonts/SUSE/SUSE-Regular.ttf');
+}
+@font-face {
+    font-family: 'SUSE Bold';
+    src: url('../assets/fonts/SUSE/SUSE-Bold.ttf');
+}
+@font-face {
+    font-family: 'Lemon';
+    src: url('../assets/fonts/Lemon/Lemon-Regular.ttf');
+}
+
+
+:root{
+    /* Paleta*/
+    --bg-color: #0d1328;
+    --section-dec-color: #fafac6;
+    --hero-sec-color: #fafac6;
+    --hero-sec-div-color: #0d1328;
+
+    --reg-font-color: #ffffff;
+    --highlight-font-1: #8884ff;
+    --highlight-font-2: #7cfef0;
+
+
+    /* Fontes */
+    --reg-font: 'SUSE Regular';
+    --bold-font: 'SUSE Bold';
+    --dec-font: 'Lemon';
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
+        --bg-color: #ffffff;
+        --hero-sec-color: #0d1328;
+        --hero-sec-div-color: #fafac6;
+
+        --reg-font-color: #0d1328;
+        --highlight-font-2: #beb7a4;
+    }
+
+}

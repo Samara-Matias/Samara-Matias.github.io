@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--reg-font);
+    background-color: var(--bg-color);
+    color: var(--reg-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2, h3, h4{
+    font-family: var(--dec-font);
+}
+
+button{
+    font-family: var(--bold-font);
+}
